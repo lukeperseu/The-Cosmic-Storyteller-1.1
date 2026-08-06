@@ -14,36 +14,36 @@ import {
   User,
 } from "firebase/auth";
 
-// Configuração do Firebase utilizando Variáveis de Ambiente do Vite (Seguro contra vazamentos no GitHub)
+// Configuração do Firebase utilizando Variáveis de Ambiente do Next.js
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-// Inicializa o aplicativo Firebase evitando múltiplas instâncias (Singleton pattern)
+// Inicializa o aplicativo Firebase evitando múltiplas instâncias duplicadas (Padrão Singleton)
 const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
 
-// Inicialização do Firestore (suporta banco de dados padrão ou customizado via variável opcional)
-export const db = import.meta.env.VITE_FIREBASE_FIRESTORE_DATABASE_ID
-  ? getFirestore(app, import.meta.env.VITE_FIREBASE_FIRESTORE_DATABASE_ID)
+// Inicialização segura do Firestore
+export const db = process.env.NEXT_PUBLIC_FIREBASE_FIRESTORE_DATABASE_ID
+  ? getFirestore(app, process.env.NEXT_PUBLIC_FIREBASE_FIRESTORE_DATABASE_ID)
   : getFirestore(app);
 
-// Inicialização da Autenticação e Provedor Google
+// Inicialização da Autenticação e Provedor do Google
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
 
-// Configuração personalizada de escopos e parâmetros para o Auth do Google
+// Configurações personalizadas para o login com Google
 googleProvider.addScope("profile");
 googleProvider.addScope("email");
 googleProvider.setCustomParameters({
   prompt: "select_account",
 });
 
-// Funções utilitárias para gerenciar o usuário atual
+// Funções utilitárias auxiliares para manipulação de sessão
 export function getCurrentUserId(): string | null {
   return auth.currentUser ? auth.currentUser.uid : null;
 }
@@ -52,7 +52,7 @@ export function getCurrentUser(): User | null {
   return auth.currentUser;
 }
 
-// Re-exportações dos métodos de autenticação para uso nos componentes
+// Re-exportações dos métodos de autenticação para uso nos componentes do app
 export {
   signInWithPopup,
   signInWithRedirect,

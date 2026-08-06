@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+/* Fallback de contraste para temas claros/escuros do navegador */
+body {
+  color: #f1f5f9; /* text-slate-100 */
+  background-color: #000000;
+  color-scheme: dark;
+}
+
+/* Forçar visualização legível e alto contraste em controles nativos */
+input, select, textarea, button {
+  color-scheme: dark;
+  color: #f8fafc;
+}
+
+select option {
+  background-color: #0f172a; /* bg-slate-900 */
+  color: #f8fafc; /* text-slate-50 */
+}
+
+::placeholder {
+  color: #94a3b8 !important; /* text-slate-400 */
+  opacity: 0.8 !important;
+}
+
+/* Personalização de Scrollbar para alto contraste */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bgIris" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5f0ff"/>
+      <stop offset="50%" stop-color="#e9d8a6"/>
+      <stop offset="100%" stop-color="#d8b4fe"/>
+    </linearGradient>
+    <radialGradient id="glowIris" cx="50%" cy="50%" r="50%">
+      <stop offset="70%" stop-color="#a855f7" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#7e22ce" stop-opacity="1"/>
+    </radialGradient>
+    <clipPath id="circleClipIris">
+      <circle cx="100" cy="100" r="92" />
+    </clipPath>
+  </defs>
+
+  <!-- Background Circle with Violet Glow -->
+  <circle cx="100" cy="100" r="98" fill="url(#bgIris)" stroke="#9333ea" stroke-width="4" />
+
+  <g clip-path="url(#circleClipIris)">
+    <!-- Light Soft Background Sky/Outdoor -->
+    <rect x="0" y="0" width="200" height="200" fill="url(#bgIris)" />
+    
+    <!-- Sunburst bokeh effect -->
+    <circle cx="160" cy="40" r="35" fill="#ffffff" opacity="0.4" />
+    <circle cx="40" cy="60" r="25" fill="#f3e8ff" opacity="0.5" />
+
+    <!-- Twin Pigtails Hair (Left & Right) -->
+    <path d="M 25 70 C 10 90, 15 130, 35 150 C 45 135, 45 100, 35 80 Z" fill="#3a2318" />
+    <path d="M 175 70 C 190 90, 185 130, 165 150 C 155 135, 155 100, 165 80 Z" fill="#3a2318" />
+
+    <!-- Shoulders & Black Top -->
+    <path d="M 40 170 C 40 145, 70 140, 100 140 C 130 140, 160 145, 160 170 L 175 200 L 25 200 Z" fill="#18181b" />
+    <!-- Collar bone detail -->
+    <path d="M 85 145 C 95 150, 105 150, 115 145" stroke="#fbcfe8" stroke-width="2" fill="none" stroke-linecap="round" />
+
+    <!-- Neck -->
+    <path d="M 85 115 L 85 142 C 95 146, 105 146, 115 142 L 115 115 Z" fill="#fce7f3" />
+    <!-- Neck shadow -->
+    <path d="M 85 115 C 95 125, 105 125, 115 115 Z" fill="#f472b6" opacity="0.3" />
+
+    <!-- Face Shape -->
+    <path d="M 60 70 C 60 110, 80 130, 100 130 C 120 130, 140 110, 140 70 C 140 50, 120 40, 100 40 C 80 40, 60 50, 60 70 Z" fill="#fdf2f8" />
+
+    <!-- Cheeks Blush -->
+    <circle cx="75" cy="95" r="10" fill="#f43f5e" opacity="0.25" />
+    <circle cx="125" cy="95" r="10" fill="#f43f5e" opacity="0.25" />
+
+    <!-- Anime Eyes (Large, Expressive Purple/Violet) -->
+    <!-- Left Eye -->
+    <ellipse cx="78" cy="88" rx="10" ry="13" fill="#2e1065" />
+    <ellipse cx="78" cy="90" rx="7" ry="9" fill="#9333ea" />
+    <circle cx="75" cy="84" r="3.5" fill="#ffffff" />
+    <circle cx="81" cy="93" r="2" fill="#ffffff" />
+    <!-- Right Eye -->
+    <ellipse cx="122" cy="88" rx="10" ry="13" fill="#2e1065" />
+    <ellipse cx="122" cy="90" rx="7" ry="9" fill="#9333ea" />
+    <circle cx="119" cy="84" r="3.5" fill="#ffffff" />
+    <circle cx="125" cy="93" r="2" fill="#ffffff" />
+
+    <!-- Eyelashes -->
+    <path d="M 66 82 C 72 77, 85 77, 90 82" stroke="#18181b" stroke-width="3" stroke-linecap="round" fill="none" />
+    <path d="M 110 82 C 115 77, 128 77, 134 82" stroke="#18181b" stroke-width="3" stroke-linecap="round" fill="none" />
+
+    <!-- Gentle Nose & Smile -->
+    <circle cx="100" cy="100" r="1.5" fill="#f472b6" />
+    <path d="M 92 110 C 97 115, 103 115, 108 110" stroke="#be185d" stroke-width="2.5" stroke-linecap="round" fill="none" />
+
+    <!-- Messy Bangs Hair Front -->
+    <path d="M 55 65 C 65 40, 90 35, 100 35 C 110 35, 135 40, 145 65 C 130 55, 115 65, 105 75 C 95 65, 80 55, 55 65 Z" fill="#4a2e1b" />
+    <!-- Hair Strands Front Bangs -->
+    <path d="M 70 45 C 75 60, 80 80, 82 82 C 85 70, 90 55, 100 45 C 105 60, 115 80, 118 82 C 122 70, 128 55, 135 50" stroke="#3a2318" stroke-width="8" stroke-linecap="round" fill="none" />
+    <path d="M 92 40 L 98 70 L 104 40" fill="#3a2318" />
+
+    <!-- Hair Ribbons/Ties -->
+    <circle cx="42" cy="82" r="5" fill="#a855f7" />
+    <circle cx="158" cy="82" r="5" fill="#a855f7" />
+  </g>
+
+  <!-- Outer Ring Badge Accent -->
+  <circle cx="100" cy="100" r="96" fill="none" stroke="#d8b4fe" stroke-width="2" opacity="0.8"/>
+</svg>

@@ -1,0 +1,6 @@
+{
+  "name": "The Cosmic Storyteller",
+  "description": "Ficha e gerenciador de RPG sci-fi/fantasia The Cosmic Storyteller",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

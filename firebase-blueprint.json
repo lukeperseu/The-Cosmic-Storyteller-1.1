@@ -1,0 +1,60 @@
+{
+  "entities": {
+    "Campanha": {
+      "title": "Campanha",
+      "description": "Fichas, campanhas e contratos de RPG do usuário",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "tipo": { "type": "string" },
+        "nome": { "type": "string" },
+        "sistema": { "type": "string" },
+        "cenario": { "type": "string" },
+        "dataCriacao": { "type": "string" }
+      },
+      "required": ["userId"]
+    },
+    "Feedback": {
+      "title": "Feedback",
+      "description": "Notas e recomendações enviadas para os desenvolvedores",
+      "type": "object",
+      "properties": {
+        "destinatario": { "type": "string" },
+        "assunto": { "type": "string" },
+        "mensagem": { "type": "string" },
+        "imagemBase64": { "type": "string" },
+        "userEmail": { "type": "string" },
+        "userId": { "type": "string" },
+        "data_envio": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["mensagem"]
+    }
+  },
+  "firestore": {
+    "/Campanhas/{campanhaId}": {
+      "schema": "Campanha",
+      "description": "Coleção principal de campanhas e fichas de personagens"
+    },
+    "/Feedbacks/{feedbackId}": {
+      "schema": "Feedback",
+      "description": "Feedbacks e notas dos usuários"
+    },
+    "/RecomendacoesZane/{recomendacaoId}": {
+      "schema": "Feedback",
+      "description": "Recomendações e sugestões diretas enviadas para o Zane"
+    },
+    "/ChatGlobal/{msgId}": {
+      "schema": "Feedback",
+      "description": "Mensagens do Chat Global ao vivo"
+    },
+    "/CampanhasGlobais/{campId}": {
+      "schema": "Campanha",
+      "description": "Campanhas globais abertas no feed"
+    },
+    "/CampanhasGlobaisMsgs/{msgId}": {
+      "schema": "Feedback",
+      "description": "Mensagens em sessões de campanhas globais"
+    }
+  }
+}
